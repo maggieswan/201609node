@@ -5,10 +5,14 @@ function express(){
     }
     app.fns=[];//这个就是竖条条装方法的那个数组
     //配置中间件
-    app.use=function(fn){//根据上面使用方法，知道这里接收一个函数fn
+    app.use=function(path,fn){//根据上面使用方法，知道这里接收一个函数fn
         //this.fns.push(fn);   与下面保持一致
+      if(typeof path=='function'){
+          fn=path;
+          path='/';
+      }
         this.fns.push({
-            path:'/', //根目录
+            path:path, //根目录
             fn:fn
         });
     }
