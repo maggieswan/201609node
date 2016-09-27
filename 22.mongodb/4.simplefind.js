@@ -66,3 +66,16 @@ PersonModel.find().sort({age:1}).skip(3).limit(3).exec(function(err,docs){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
